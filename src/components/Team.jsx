@@ -17,7 +17,7 @@ export const Team = (props) => {
                 <div key={`${d.name}-${i}`} className="col-md-3 col-sm-6 team">
                   <div className="thumbnail">
                     {" "}
-                    <img src={d.img} alt="..." className="team-img" />
+                    <img src={d.img} alt="..." className="team-img" style={{ marginRight: '50px' }}  />
                     <div className="caption">
                       <h4>{d.name}</h4>
                       <p>{d.job}</p>

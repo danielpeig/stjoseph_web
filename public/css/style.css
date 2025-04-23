@@ -448,6 +448,10 @@ header .intro-text {
 }
 #team .team-img {
   width: 240px;
+  height: 300px;
+}
+.team{
+  padding-left: 10%;
 }
 #team .thumbnail {
   background: transparent;

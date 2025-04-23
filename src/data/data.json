@@ -131,28 +131,23 @@
   ],
   "Team": [
     {
-      "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
+      "img": "img/team/mav.jpg",
+      "name": "Maverick Angelo Sibal",
+      "job": "Developer"
     },
     {
-      "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
+      "img": "img/team/lance.png",
+      "name": "Lance Christopher Bagsit",
+      "job": "Developer"
     },
     {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
+      "img": "img/team/peig.jpg",
+      "name": "Daniel Peig",
+      "job": "Developer"
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
+    "address": "965 Aurora Blvd., Project 3, Quezon City, 1102",
     "phone": "+1 123 456 1234",
     "email": "info@company.com",
     "facebook": "fb.com",

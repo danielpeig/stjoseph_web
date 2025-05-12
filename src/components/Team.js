@@ -28,6 +28,14 @@ export const Team = (props) => {
             : "loading"}
         </div>
       </div>
+      {/* Temporary */}
+      <div id="footer">
+        <div className="container text-center">
+          <p>
+            Footer
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

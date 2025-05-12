@@ -140,13 +140,14 @@ export const Contact = (props) => {
           </div>
         </div>
       </div>
-      <div id="footer">
+      {/* To adjust */}
+      {/* <div id="footer">
         <div className="container text-center">
           <p>
             Footer
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

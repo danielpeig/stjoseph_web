@@ -1008,3 +1008,6 @@ label {
   object-fit: cover;
   display: block;
 }
+.space {
+  height: 40px;
+}

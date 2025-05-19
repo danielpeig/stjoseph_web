@@ -41,7 +41,7 @@ export default function ServicesCarousel() {
       name: "Pan De San Jose",
       text: "Custom mobile application development for iOS and Android platforms to enhance your business reach and provide seamless user experiences.",
       definition: "App development is the process of creating software applications that run on mobile devices, involving coding, UI/UX design, testing, and deployment for various platforms.",
-      images: ["img/PAN DE SAN JOSE.JPG", "img/PAN DE SAN JOSE (2).jpg", "img/PAN DE SAN JOSE(1).jpg"]
+      images: ["img/pan-de-san-jose.JPG", "img/pan-de-san-jose(2).jpg", "img/pan-de-san-jose(1).jpg"]
     },
     {
       name: "Bloodletting Activity",
@@ -53,13 +53,13 @@ export default function ServicesCarousel() {
       name: "Paskong Puno ng Panalangin",
       text: "Secure and scalable cloud solutions to streamline your operations, increase efficiency, and reduce infrastructure costs.",
       definition: "Cloud services refer to a wide range of services delivered on demand to companies and customers over the internet. These services are designed to provide easy, affordable access to applications and resources without internal infrastructure or hardware.",
-      images: ["img/CHRISTMAS BALLS (FOR FUNDRAISING).JPG", "img/CHRISTMAS BALLS (FOR FUNDRAISING) (1).JPG", "img/CHRISTMAS BALLS (FOR FUNDRAISING) (2).JPG" ]
+      images: ["img/CHRISTMAS.JPG", "img/CHRISTMAS(1).JPG", "img/CHRISTMAS(2).JPG" ]
     },
     {
       name: "Ambag ng Pasko",
       text: "Secure and scalable cloud solutions to streamline your operations, increase efficiency, and reduce infrastructure costs.",
       definition: "Cloud services refer to a wide range of services delivered on demand to companies and customers over the internet. These services are designed to provide easy, affordable access to applications and resources without internal infrastructure or hardware.",
-      images: ["img/AMBAG.jpg", "img/AMBAG (2).jpg", "img/AMBAG (1).jpg"]
+      images: ["img/AMBAG.jpg", "img/AMBAG(2).jpg", "img/AMBAG(1).jpg"]
     }
   ];
 

@@ -639,28 +639,187 @@ header .intro-text {
   font-weight: 600;
   color: #666;
 }
-/* Team Section */
+/* Team Section Enhanced Styling */
 #team {
-  padding: 100px 0;
+  padding: 120px 0;
+  background-color: #f9f9f9;
+  position: relative;
 }
-#team h4 {
-  margin: 5px 0;
+
+#team::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('../img/pattern.png');
+  opacity: 0.5;
+  z-index: 0;
 }
-#team .team-img {
-  width: 240px;
+
+#team .container {
+  position: relative;
+  z-index: 1;
+}
+
+#team .section-title {
+  margin-bottom: 60px;
+}
+
+#team .section-title h2 {
+  font-size: 42px;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  text-transform: none;
+  letter-spacing: -0.5px;
+}
+
+#team .section-title h2::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  height: 4px;
+  width: 80px;
+  bottom: 0;
+  margin-left: -40px;
+  left: 50%;
+  border-radius: 2px;
+}
+
+#team .section-title p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #777;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#team .team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.team-member {
+  flex: 0 0 calc(25% - 40px);
+  max-width: calc(25% - 40px);
+  margin-bottom: 40px;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.team-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+
+.team-img {
+  width: 100%;
   height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-.team{
-  padding-left: 10%;
+
+.team-member:hover .team-img {
+  transform: scale(1.05);
 }
-#team .thumbnail {
-  background: transparent;
-  border: 0;
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(99, 114, 255, 0) 0%,
+    rgba(92, 169, 251, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-#team .thumbnail .caption {
-  padding: 10px 0 0;
-  color: #888;
+
+.team-member:hover .team-overlay {
+  opacity: 0.5;
 }
+
+.team-social {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.team-member:hover .team-social {
+  bottom: 0;
+  opacity: 1;
+}
+
+.team-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.team-social a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(92, 169, 251, 0.4);
+}
+
+.team-info {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.team-info h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.team-info p.role {
+  font-size: 15px;
+  color: #6372ff;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.team-info p.bio {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
@@ -803,8 +962,43 @@ label {
   border-bottom: 2px solid #608dfd;
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .team-member {
+    flex: 0 0 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+  }
+}
+
 @media (max-width: 768px) {
   #about img {
     margin: 50px 0;
+  }
+ #team {
+    padding: 80px 0;
+  }
+  
+  #team .section-title h2 {
+    font-size: 36px;
+  }
+  
+  .team-member {
+    flex: 0 0 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+    margin-bottom: 30px;
+  }
+  
+  .team-img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  #team .section-title h2 {
+    font-size: 30px;
+  }
+  
+  .team-img {
+    height: 300px;
   }
 }

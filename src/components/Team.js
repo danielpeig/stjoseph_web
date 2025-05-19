@@ -1,39 +1,55 @@
 import React from "react";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export const Team = (props) => {
   return (
-    <div id="team" className="text-center">
+    <div id="team">
       <div className="container">
-        <div className="col-md-8 col-md-offset-2 section-title">
+        <div className="section-title text-center">
           <h2>Meet the Team</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+            Our team of dedicated professionals brings years of experience and passion
+            to every project. Get to know the people behind our success.
           </p>
         </div>
-        <div id="row">
+        
+        <div className="team-container">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-3 col-sm-6 team">
-                  <div className="thumbnail">
-                    {" "}
-                    <img src={d.img} alt="..." className="team-img" style={{ marginRight: '50px' }}  />
-                    <div className="caption">
-                      <h4>{d.name}</h4>
-                      <p>{d.job}</p>
+                <div key={`${d.name}-${i}`} className="team-member">
+                  <div className="team-img-container">
+                    <img src={d.img} alt={d.name} className="team-img" />
+                    <div className="team-overlay"></div>
+                    <div className="team-social">
+                      {d.facebook && (
+                        <a href={d.facebook}>
+                          <Facebook size={16} />
+                        </a>
+                      )}
+                      {d.twitter && (
+                        <a href={d.twitter}>
+                          <Twitter size={16} />
+                        </a>
+                      )}
+                      {d.linkedin && (
+                        <a href={d.linkedin}>
+                          <Linkedin size={16} />
+                        </a>
+                      )}
+                      {d.instagram && (
+                        <a href={d.instagram}>
+                          <Instagram size={16} />
+                        </a>
+                      )}
                     </div>
+                  </div>
+                  <div className="team-info">
+                    <h4>{d.name}</h4>
+                    <p className="role">{d.job}</p>
                   </div>
                 </div>
               ))
-            : "loading"}
-        </div>
-      </div>
-      {/* Temporary */}
-      <div id="footer">
-        <div className="container text-center">
-          <p>
-            Footer
-          </p>
+            : "Loading team members..."}
         </div>
       </div>
     </div>

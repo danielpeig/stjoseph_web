@@ -4,7 +4,7 @@
     "paragraph": "Diocese of Cubao"
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "Founded on November 23, 1951, the Diocesan Shrine of St. Joseph is strategically located along one of the stations (Anonas) of the LRT system. The Shrine primarily caters to the Catholic faithful of eight barangays under the Diocese of Cubao. The current parish priest is Rev. Fr. Ronaldo M. Macale.",
     "Why": [
       "Lorem ipsum dolor",
       "Tempor incididunt",
@@ -65,38 +65,6 @@
       "smallImage": "img/portfolio/09-small.jpg"
     }
   ],
-  "Services": [
-    {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    }
-  ],
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
@@ -133,17 +101,23 @@
     {
       "img": "img/team/mav.jpg",
       "name": "Maverick Angelo Sibal",
-      "job": "Developer"
+      "job": "Developer",
+      "facebook": "https://www.facebook.com/mavssss111",
+      "instagram": "https://www.instagram.com/maverick_oig/"
     },
     {
       "img": "img/team/lance.png",
       "name": "Lance Christopher Bagsit",
-      "job": "Developer"
+      "job": "Developer",
+      "facebook": "https://www.facebook.com/lancebagsit.16",
+      "instagram": "https://www.instagram.com/lncbgst/"
     },
     {
       "img": "img/team/peig.jpg",
       "name": "Daniel Peig",
-      "job": "Developer"
+      "job": "Developer",
+      "facebook": "https://www.facebook.com/iamdanielpeig",
+      "instagram": "https://www.instagram.com/iamdanpeig/"
     }
   ],
   "Contact": {

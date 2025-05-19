@@ -18,51 +18,41 @@
       "Lorem ipsum dolor"
     ]
   },
-  "Gallery": [
+ "Gallery": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "Ambag ng Pasko",
+      "largeImage": "img/AMBAG(1).jpg",
+      "smallImage": "img/AMBAG(1).jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/02-large.jpg",
-      "smallImage": "img/portfolio/02-small.jpg"
+      "title": "Bloodletting Activity",
+      "largeImage": "img/BLOODLETTING.JPG",
+      "smallImage": "img/BLOODLETTING.JPG"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/03-large.jpg",
-      "smallImage": "img/portfolio/03-small.jpg"
+      "title": "DSWD Workshop",
+      "largeImage": "img/DSWD.jpg",
+      "smallImage": "img/DSWD.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/04-large.jpg",
-      "smallImage": "img/portfolio/04-small.jpg"
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose.jpg",
+      "smallImage": "img/pan-de-san-jose.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/05-large.jpg",
-      "smallImage": "img/portfolio/05-small.jpg"
+      "title": "Paskong Puno ng Panalangin",
+      "largeImage": "img/CHRISTMAS.jpg",
+      "smallImage": "img/CHRISTMAS.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/06-large.jpg",
-      "smallImage": "img/portfolio/06-small.jpg"
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER.jpg",
+      "smallImage": "img/ENCOUNTER.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
+      "title": "Tulong Sa Bagyong Carina",
+      "largeImage": "img/bagyong-carina.jpg",
+      "smallImage": "img/bagyong-carina.jpg"
     }
   ],
   "Testimonials": [

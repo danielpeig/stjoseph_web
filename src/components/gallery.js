@@ -3,17 +3,12 @@ import React from "react";
 
 export const Gallery = (props) => {
   const calculateOffset = (totalItems) => {
-    // If the number of items isn't divisible by 3, calculate the offset for centering
     const itemsInLastRow = totalItems % 3;
-    
-    // Only apply offset if there's 1 item in the last row
+
     if (itemsInLastRow === 1) {
-      // For Bootstrap grid, to center one item in a 3-item row, we need to offset by 4 columns
-      // (12 columns total - 4 columns for the item) / 2 = 4 columns offset
       return "col-lg-offset-4";
     }
     
-    // If there are 2 items in the last row, we offset by 2 columns
     if (itemsInLastRow === 2) {
       return "col-lg-offset-2";
     }

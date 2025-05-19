@@ -1002,3 +1002,9 @@ label {
     height: 300px;
   }
 }
+.img-responsive {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}

@@ -50,3 +50,37 @@ section {
 #about {
   padding: 120px 0;
 }
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.schedule-table {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: center;
+  padding: 15px;
+  padding-left: 40% !important;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.schedule-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .schedule-table {
+    width: 100%;
+  }
+}

@@ -116,6 +116,227 @@
     "email": "sample@email.com",
     "facebook": "https://www.facebook.com/SanJoseDeQuezonCity/"
   },
+  "Gallery": [
+    {
+      "title": "Ambag ng Pasko",
+      "largeImage": "img/AMBAG(1).jpg",
+      "smallImage": "img/AMBAG(1).jpg"
+    },
+    {
+      "title": "Ambag ng Pasko",
+      "largeImage": "img/AMBAG.jpg",
+      "smallImage": "img/AMBAG.jpg"
+    },
+    {
+      "title": "Ambag ng Pasko",
+      "largeImage": "img/AMBAG(2).jpg",
+      "smallImage": "img/AMBAG(2).jpg"
+    },
+    {
+      "title": "Ambag ng Pasko",
+      "largeImage": "img/AMBAG(3).jpg",
+      "smallImage": "img/AMBAG(3).jpg"
+    },
+    {
+      "title": "Ambag ng Pasko",
+      "largeImage": "img/AMBAG(4).jpg",
+      "smallImage": "img/AMBAG(4).jpg"
+    },
+    {
+      "title": "Bloodletting Activity",
+      "largeImage": "img/BLOODLETTING.JPG",
+      "smallImage": "img/BLOODLETTING.JPG"
+    },
+    {
+      "title": "Bloodletting Activity",
+      "largeImage": "img/BLOODLETTING(1).JPG",
+      "smallImage": "img/BLOODLETTING(1).JPG"
+    },
+    {
+      "title": "Bloodletting Activity",
+      "largeImage": "img/BLOODLETTING(2).JPG",
+      "smallImage": "img/BLOODLETTING(2).JPG"
+    },
+    {
+      "title": "DSWD Workshop",
+      "largeImage": "img/DSWD.jpg",
+      "smallImage": "img/DSWD.jpg"
+    },
+    {
+      "title": "DSWD Workshop",
+      "largeImage": "img/DSWD (1).jpg",
+      "smallImage": "img/DSWD (1).jpg"
+    },
+    {
+      "title": "DSWD Workshop",
+      "largeImage": "img/DSWD (2).jpg",
+      "smallImage": "img/DSWD (2).jpg"
+    },
+    {
+      "title": "DSWD Workshop",
+      "largeImage": "img/DSWD (3).jpg",
+      "smallImage": "img/DSWD (3).jpg"
+    },
+    {
+      "title": "DSWD Workshop",
+      "largeImage": "img/DSWD (4).jpg",
+      "smallImage": "img/DSWD (4).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose.jpg",
+      "smallImage": "img/pan-de-san-jose.jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(1).jpg",
+      "smallImage": "img/pan-de-san-jose(1).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(2).jpg",
+      "smallImage": "img/pan-de-san-jose(2).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(3).jpg",
+      "smallImage": "img/pan-de-san-jose(3).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(4).jpg",
+      "smallImage": "img/pan-de-san-jose(4).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(5).jpg",
+      "smallImage": "img/pan-de-san-jose(5).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(6).jpg",
+      "smallImage": "img/pan-de-san-jose(6).jpg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(7).jpeg",
+      "smallImage": "img/pan-de-san-jose(7).jpeg"
+    },
+    {
+      "title": "Pan De San Jose",
+      "largeImage": "img/pan-de-san-jose(8).jpg",
+      "smallImage": "img/pan-de-san-jose(8).jpg"
+    },
+    {
+      "title": "Paskong Puno ng Panalangin",
+      "largeImage": "img/CHRISTMAS.jpg",
+      "smallImage": "img/CHRISTMAS.jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER.jpg",
+      "smallImage": "img/ENCOUNTER.jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER (1).jpg",
+      "smallImage": "img/ENCOUNTER (1).jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER (2).jpg",
+      "smallImage": "img/ENCOUNTER (2).jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER (3).jpg",
+      "smallImage": "img/ENCOUNTER (3).jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER (4).jpg",
+      "smallImage": "img/ENCOUNTER (4).jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER (5).jpg",
+      "smallImage": "img/ENCOUNTER (5).jpg"
+    },
+    {
+      "title": "PPC Encounter with Street Dwellers",
+      "largeImage": "img/ENCOUNTER (6).jpg",
+      "smallImage": "img/ENCOUNTER (6).jpg"
+    },
+    {
+      "title": "Tulong Sa Bagyong Carina",
+      "largeImage": "img/bagyong-carina.jpg",
+      "smallImage": "img/bagyong-carina.jpg"
+    },
+    {
+      "title": "Tulong Sa Bagyong Carina",
+      "largeImage": "img/bagyong-carina(1).jpg",
+      "smallImage": "img/bagyong-carina(1).jpg"
+    },
+    {
+      "title": "Tulong Sa Bagyong Carina",
+      "largeImage": "img/bagyong-carina(2).jpg",
+      "smallImage": "img/bagyong-carina(2).jpg"
+    },
+    {
+      "title": "Tulong Sa Bagyong Carina",
+      "largeImage": "img/bagyong-carina(3).jpg",
+      "smallImage": "img/bagyong-carina(3).jpg"
+    },
+    {
+      "title": "Tulong Sa Bagyong Carina",
+      "largeImage": "img/bagyong-carina(4).jpg",
+      "smallImage": "img/bagyong-carina(4).jpg"
+    }
+  ],
+  "Priests": [
+    {
+      "name": "Rev. Fr. Antonio Ramirez",
+      "img": "https://i.pravatar.cc/300?img=12",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo ac justo aliquet cursus."
+    },
+    {
+      "name": "Rev. Fr. Miguel de la Cruz",
+      "img": "https://i.pravatar.cc/300?img=15",
+      "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+      "name": "Rev. Fr. Luis Santos",
+      "img": "https://i.pravatar.cc/300?img=22",
+      "description": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."
+    },
+    {
+      "name": "Rev. Fr. Rafael Mendoza",
+      "img": "https://i.pravatar.cc/300?img=30",
+      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "name": "Rev. Fr. Jerome Villanueva",
+      "img": "https://i.pravatar.cc/300?img=36",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+    },
+    {
+      "name": "Rev. Fr. Carlo Reyes",
+      "img": "https://i.pravatar.cc/300?img=40",
+      "description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt."
+    }
+  ],  
+  "Schedule": [
+  { "time": "6:00am", "language": "Tagalog" },
+  { "time": "7:30am", "language": "Tagalog" },
+  { "time": "9:00am", "language": "English" },
+  { "time": "10:30am", "language": "Tagalog" },
+  { "time": "12:30pm", "language": "Tagalog" },
+  { "time": "2:00pm", "language": "Tagalog" },
+  { "time": "3:30pm", "language": "Tagalog" },
+  { "time": "5:00pm", "language": "Tagalog" },
+  { "time": "6:30pm", "language": "Tagalog" },
+  { "time": "8:00pm", "language": "English" }
+  ],
   "Announcements": {
     "announcements": [
       {

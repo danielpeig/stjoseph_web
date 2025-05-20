@@ -47,7 +47,7 @@ export default function ServicesCarousel() {
       name: "Bloodletting Activity",
       text: "Strategic digital marketing services to boost your online presence, increase visibility, and drive targeted traffic to your business.",
       definition: "Digital marketing encompasses all marketing efforts that use digital channels such as search engines, social media, email, and websites to connect with current and prospective customers.",
-      images: ["img/BLOODLETTING.jpg", "img/BLOODLETTING (1).jpg","img/BLOODLETTING (2).jpg"]
+      images: ["img/BLOODLETTING.jpg", "img/BLOODLETTING(1).jpg","img/BLOODLETTING(2).jpg"]
     },
     {
       name: "Paskong Puno ng Panalangin",
@@ -212,6 +212,14 @@ export default function ServicesCarousel() {
       height: 250px;
       object-fit: cover;
       border-radius: 8px 8px 0 0;
+      transition: transform 0.3s ease, filter 0.3s ease, blur 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .sc-image:hover {
+      transform: scale(1.02);
+      filter: brightness(0.8) blur(2px);
     }
     
     @media (min-width: 768px) {

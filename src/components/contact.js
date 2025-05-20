@@ -172,6 +172,14 @@ export const Contact = (props) => {
         <div className="container">
           <div className="col-md-8">
             <div className="row">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
               <div className="section-title">
                 <h2>Contact us Now!</h2>
                 <p>
@@ -233,6 +241,14 @@ export const Contact = (props) => {
             </div>
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
+          <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <div className="contact-item">
               <h3>Contact Info</h3>
               <p>

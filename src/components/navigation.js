@@ -45,9 +45,10 @@ export const Navigation = (props) => {
           <ul className="nav navbar-nav">
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#announcements" className="page-scroll">Announcements</a> : <Link to="/#announcements">Announcements</Link>}</li>
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#about" className="page-scroll">About</a> : <Link to="/#about">About</Link>}</li>
+            <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#schedule" className="page-scroll">Schedule</a> : <Link to="/#schedule">Schedule</Link>}</li>
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#services" className="page-scroll">Services</a> : <Link to="/#services">Services</Link>}</li>
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#portfolio" className="page-scroll">Gallery</a> : <Link to="/#portfolio">Gallery</Link>}</li>
-            <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#testimonials" className="page-scroll">Schedule</a> : <Link to="/#testimonials">Schedule</Link>}</li>
+            <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#priests" className="page-scroll">Priests</a> : <Link to="/#priests">Priests</Link>}</li>
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#contact" className="page-scroll">Contact</a> : <Link to="/#contact">Contact</Link>}</li>
             <li className={isTeamPage ? "active" : ""}><Link to="/team">Dev Team</Link></li>            
             <li><button className="nav-button" onClick={handleImagePopup}><strong>Donate</strong></button></li>

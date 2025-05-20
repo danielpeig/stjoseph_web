@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
-// Remove Features import
+import Schedule from "./components/Schedule";
 import { About } from "./components/about";
 import { Announcements } from "./components/announcements";
 import Services from "./components/services";
 import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
+import { Priests } from "./components/Priests.js";
 import { Team } from "./components/Team.js";
 import { Contact } from "./components/contact";
 import AdminDashboard from "./components/AdminDashboard";
@@ -46,12 +46,12 @@ const HomePage = ({ landingPageData }) => {
   return (
     <>
       <Header data={landingPageData.Header} />
-      {/* Remove Features component */}
       <Announcements data={landingPageData.Announcements} />
       <About data={landingPageData.About} />
+      <Schedule data={landingPageData.Schedule}/>
       <Services data={landingPageData.Services} />
       <Gallery data={landingPageData.Gallery} />
-      <Testimonials data={landingPageData.Testimonials} />
+      <Priests data={landingPageData.Priests} />
       <Contact data={landingPageData.Contact} />
     </>
   );
@@ -104,4 +104,3 @@ const App = () => {
 };
 
 export default App;
-

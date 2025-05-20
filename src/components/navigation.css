@@ -15,20 +15,30 @@
 
 /* Adjust scroll padding for the entire page */
 html {
-  scroll-padding-top: 100px; /* This ensures content doesn't hide behind navbar */
+  scroll-padding-top: 120px; /* Increased to ensure content doesn't hide behind navbar */
 }
 
 /* General section spacing */
 section {
-  padding: 100px 0;
+  padding: 120px 0;
   position: relative;
+  min-height: calc(100vh - 80px); /* Ensures sections take up full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Section title spacing */
 .section-title {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   position: relative;
-  padding-top: 20px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+/* Remove the target pseudo-element as we're using scroll-padding instead */
+:target::before {
+  display: none;
 }
 
 /* Team section specific adjustments */
@@ -39,9 +49,4 @@ section {
 /* About section specific adjustments */
 #about {
   padding: 120px 0;
-}
-
-/* Remove the target pseudo-element as we're using scroll-padding instead */
-:target::before {
-  display: none;
 }

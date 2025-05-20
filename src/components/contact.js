@@ -1,26 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import Swal from "sweetalert2";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, limit, doc, getDoc } from "firebase/firestore";
 
-export const Contact = (props) => {
-  // Firebase configuration - replace with your own config
-  const firebaseConfig = {
-    apiKey: "AIzaSyBfjYMkYdCPTKb0FyGIvKB2fVlbTdobi1s",
-    authDomain: "stjoseph-website.firebaseapp.com",
-    projectId: "stjoseph-website",
-    storageBucket: "stjoseph-website.firebasestorage.app",
-    messagingSenderId: "480997652051",
-    appId: "1:480997652051:web:6421e76f23ed708fa5b8a6",
-    measurementId: "G-PBK6DPK9Z7"
+// Firebase configuration - moved outside component to prevent multiple initializations
+const firebaseConfig = {
+  apiKey: "AIzaSyBfjYMkYdCPTKb0FyGIvKB2fVlbTdobi1s",
+  authDomain: "stjoseph-website.firebaseapp.com",
+  projectId: "stjoseph-website",
+  storageBucket: "stjoseph-website.firebasestorage.app",
+  messagingSenderId: "480997652051",
+  appId: "1:480997652051:web:6421e76f23ed708fa5b8a6",
+  measurementId: "G-PBK6DPK9Z7"
 };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+// Initialize Firebase once - with error handling
+let app;
+let db;
+try {
+  app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+  console.log("Firebase initialized successfully");
+} catch (error) {
+  console.error("Firebase initialization error:", error);
+}
 
+export const Contact = (props) => {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -28,6 +34,11 @@ export const Contact = (props) => {
   });
   
   const [result, setResult] = useState("");
+  
+  // Admin login state
+  const [showAdminForm, setShowAdminForm] = useState(false);
+  const [adminPassword, setAdminPassword] = useState("");
+  const [adminMessage, setAdminMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +46,49 @@ export const Contact = (props) => {
       ...formState,
       [name]: value,
     });
+  };
+  
+  const handleAdminPasswordChange = (e) => {
+    setAdminPassword(e.target.value);
+  };
+  
+  const toggleAdminForm = () => {
+    setShowAdminForm(!showAdminForm);
+    // Clear any previous messages when toggling the form
+    setAdminMessage("");
+  };
+  
+  // Simplified approach - hardcode the known password
+  const checkAdminPassword = () => {
+    // The password from the Firestore database screenshot
+    const correctPassword = "l@t0m";
+    
+    console.log("Checking password:", adminPassword, "against:", correctPassword);
+    
+    if (adminPassword === correctPassword) {
+      setAdminMessage("Admin login successful");
+      Swal.fire({
+        title: "Success!",
+        text: "Admin login successful",
+        icon: "success",
+        confirmButtonText: "Continue to Admin Panel",
+        confirmButtonColor: "#3085d6"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirect to admin dashboard
+          window.location.href = '/admin-dashboard';
+        }
+      });
+    } else {
+      setAdminMessage("Incorrect password");
+      Swal.fire({
+        title: "Error!",
+        text: "Incorrect password",
+        icon: "error",
+        confirmButtonText: "Try Again",
+        confirmButtonColor: "#d33"
+      });
+    }
   };
 
   const onSubmit = async (event) => {
@@ -47,13 +101,17 @@ export const Contact = (props) => {
     try {
       // First, save to Firebase
       try {
-        await addDoc(collection(db, "contactSubmissions"), {
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
-          timestamp: serverTimestamp()
-        });
-        console.log("Submission saved to Firebase");
+        if (db) {
+          await addDoc(collection(db, "contactSubmissions"), {
+            name: formState.name,
+            email: formState.email,
+            message: formState.message,
+            timestamp: serverTimestamp()
+          });
+          console.log("Submission saved to Firebase");
+        } else {
+          console.error("Firebase database not initialized");
+        }
       } catch (firebaseError) {
         console.error("Firebase error:", firebaseError);
         // Continue with Web3Forms even if Firebase fails
@@ -214,6 +272,40 @@ export const Contact = (props) => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div id="footer" className="py-4 bg-blue-500 text-white">
+        <div className="container mx-auto text-center">
+          <p className="mb-1">© 2025 Company Name. All Rights Reserved.</p>
+          <p className="mb-1">
+            <span 
+              className="cursor-pointer" 
+              onClick={toggleAdminForm} 
+              title="Company Information">
+              965 Aurora Blvd, Project 3, Quezon City
+            </span>
+          </p>
+          {showAdminForm && (
+            <div className="mt-3 max-w-xs mx-auto">
+              <input
+                type="password"
+                value={adminPassword}
+                onChange={handleAdminPasswordChange}
+                placeholder="Admin Password"
+                className="px-3 py-1 text-black rounded w-full mb-2"
+              />
+              <button
+                onClick={checkAdminPassword}
+                className="bg-white text-blue-500 px-3 py-1 rounded">
+                Login
+              </button>
+              {adminMessage && (
+                <p className="mt-2 text-sm text-white bg-opacity-70 p-1 rounded">
+                  {adminMessage}
+                </p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

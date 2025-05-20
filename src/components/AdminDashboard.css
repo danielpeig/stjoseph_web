@@ -1,0 +1,173 @@
+.admin-dashboard {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding: 120px 0 60px;
+}
+
+.admin-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.admin-title {
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.admin-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+}
+
+.announcement-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.announcement-input {
+  margin-bottom: 20px;
+}
+
+.announcement-input input,
+.announcement-input textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.announcement-input input:focus,
+.announcement-input textarea:focus {
+  border-color: #5ca9fb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(92, 169, 251, 0.1);
+  background: #fff;
+}
+
+.btn-add {
+  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(92, 169, 251, 0.3);
+}
+
+.announcement-list {
+  display: grid;
+  gap: 20px;
+}
+
+.announcement-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-save,
+.btn-delete {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.btn-save {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-save:hover,
+.btn-delete:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.error-message {
+  background: #fff3f3;
+  color: #dc3545;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #dc3545;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 0 15px;
+  }
+  
+  .admin-title {
+    font-size: 24px;
+  }
+  
+  .announcement-form {
+    padding: 20px;
+  }
+  
+  .card-actions {
+    grid-template-columns: 1fr;
+  }
+}

@@ -116,6 +116,26 @@
     "email": "sample@email.com",
     "facebook": "https://www.facebook.com/SanJoseDeQuezonCity/"
   },
+  "Announcements": {
+    "announcements": [
+      {
+        "title": "Sunday Service Times Change",
+        "content": "Starting next month, our Sunday services will be held at 9:00 AM and 11:00 AM to accommodate our growing congregation."
+      },
+      {
+        "title": "Annual Picnic",
+        "content": "Join us for our annual church picnic on July 15th at Lincoln Park. Bring a dish to share and enjoy fellowship with our church family."
+      },
+      {
+        "title": "New Bible Study Series",
+        "content": "Pastor Mike will be starting a new Bible study series on the Book of Romans beginning this Wednesday at 7:00 PM."
+      },
+      {
+        "title": "Volunteers Needed",
+        "content": "Our children's ministry is looking for volunteers to help during the 11:00 AM service. If interested, please contact Sarah at children@ourchurch.org."
+      }
+    ]
+  },
   "Features": [
     {
       "icon": "fa fa-comments-o",

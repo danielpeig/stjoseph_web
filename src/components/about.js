@@ -28,7 +28,7 @@ export const About = (props) => {
       <div className="container">
         <div className={`row ${isVisible ? 'animate__animated animate__fadeInUp animate__delay-05s' : ''}`}>
           <div className="col-xs-12 col-md-6">
-            <img src="img/about.jpg" className={`img-responsive ${isVisible ? 'animate__animated animate__fadeInLeft animate__delay-05s' : ''}`} alt="" />
+            <img src="img/altar.jpg" className={`img-responsive ${isVisible ? 'animate__animated animate__fadeInLeft animate__delay-05s' : ''}`} alt="" />
           </div>
           <div className="col-xs-12 col-md-6">
             <div className={`about-text ${isVisible ? 'animate__animated animate__fadeInRight animate__delay-05s' : ''}`}>

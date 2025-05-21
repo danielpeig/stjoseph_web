@@ -4,7 +4,6 @@ import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc } 
 import { initializeApp } from "firebase/app";
 import Swal from "sweetalert2";
 
-// Reuse Firebase config from contact.js
 const firebaseConfig = {
   apiKey: "AIzaSyBfjYMkYdCPTKb0FyGIvKB2fVlbTdobi1s",
   authDomain: "stjoseph-website.firebaseapp.com",
@@ -58,7 +57,7 @@ const AdminDashboard = () => {
       const docRef = await addDoc(collection(db, "announcements"), {
         title: newAnnouncement.title,
         content: newAnnouncement.content,
-        timestamp: new Date().toISOString() // Add timestamp for sorting
+        timestamp: new Date().toISOString() 
       });
       
       if (docRef.id) {

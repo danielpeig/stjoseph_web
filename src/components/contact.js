@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, limit, doc, getDoc } from "firebase/firestore";
 
-// Firebase configuration - moved outside component to prevent multiple initializations
 const firebaseConfig = {
   apiKey: "AIzaSyBfjYMkYdCPTKb0FyGIvKB2fVlbTdobi1s",
   authDomain: "stjoseph-website.firebaseapp.com",
@@ -15,7 +14,6 @@ const firebaseConfig = {
   measurementId: "G-PBK6DPK9Z7"
 };
 
-// Initialize Firebase once - with error handling
 let app;
 let db;
 try {
@@ -56,7 +54,6 @@ export const Contact = (props) => {
     };
   }, []);
   
-  // Admin login state
   const [showAdminForm, setShowAdminForm] = useState(false);
   const [adminPassword, setAdminPassword] = useState("");
   const [adminMessage, setAdminMessage] = useState("");
@@ -75,13 +72,10 @@ export const Contact = (props) => {
   
   const toggleAdminForm = () => {
     setShowAdminForm(!showAdminForm);
-    // Clear any previous messages when toggling the form
     setAdminMessage("");
   };
   
-  // Simplified approach - hardcode the known password
   const checkAdminPassword = () => {
-    // The password from the Firestore database screenshot
     const correctPassword = "l@t0m";
     
     console.log("Checking password:", adminPassword, "against:", correctPassword);
@@ -96,7 +90,6 @@ export const Contact = (props) => {
         confirmButtonColor: "#3085d6"
       }).then((result) => {
         if (result.isConfirmed) {
-          // Redirect to admin dashboard
           window.location.href = '/admin-dashboard';
         }
       });
@@ -120,7 +113,6 @@ export const Contact = (props) => {
     formData.append("access_key", "831277f0-4ed7-4dc2-ae94-d159bffafffa");
 
     try {
-      // First, save to Firebase
       try {
         if (db) {
           await addDoc(collection(db, "contactSubmissions"), {
@@ -135,10 +127,8 @@ export const Contact = (props) => {
         }
       } catch (firebaseError) {
         console.error("Firebase error:", firebaseError);
-        // Continue with Web3Forms even if Firebase fails
       }
 
-      // Then, submit to Web3Forms
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -147,7 +137,6 @@ export const Contact = (props) => {
       const data = await response.json();
 
       if (data.success) {
-        // Show success SweetAlert
         Swal.fire({
           title: "Success!",
           text: "Your message has been sent successfully. We'll get back to you soon!",
@@ -160,7 +149,6 @@ export const Contact = (props) => {
         event.target.reset();
         setFormState({ name: "", email: "", message: "" });
       } else {
-        // Show error SweetAlert
         Swal.fire({
           title: "Error!",
           text: data.message || "Something went wrong. Please try again.",
@@ -173,7 +161,6 @@ export const Contact = (props) => {
         setResult(data.message || "Failed to submit form");
       }
     } catch (error) {
-      // Show error SweetAlert for network/other errors
       Swal.fire({
         title: "Error!",
         text: "Connection error. Please check your internet and try again.",

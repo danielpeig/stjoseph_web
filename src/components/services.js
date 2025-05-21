@@ -30,7 +30,6 @@ export default function ServicesCarousel() {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [autoSlideActive, setAutoSlideActive] = useState(true);
 
-  // Sample service data - replace with your actual data
   const servicesData = [
     {
       name: "DSWD Workshop",
@@ -64,13 +63,12 @@ export default function ServicesCarousel() {
     }
   ];
 
-  // Handle automatic rotation of carousel - only when lightbox is closed
   useEffect(() => {
     let interval;
     if (!transitioning && autoSlideActive && !isLightboxOpen) {
       interval = setInterval(() => {
         handleSlideChange((currentIndex === servicesData.length - 1) ? 0 : currentIndex + 1);
-      }, 5000); // Change slide every 5 seconds
+      }, 5000); 
     }
     
     return () => {
@@ -78,7 +76,6 @@ export default function ServicesCarousel() {
     };
   }, [servicesData.length, currentIndex, transitioning, autoSlideActive, isLightboxOpen]);
 
-  // Handle slide transitions
   const handleSlideChange = (newIndex) => {
     if (transitioning) return;
     
@@ -88,32 +85,27 @@ export default function ServicesCarousel() {
       setPhotoIndex(0); 
       setTimeout(() => {
         setTransitioning(false);
-      }, 500); // Match this to the CSS transition duration
+      }, 500); 
     }, 10);
   };
 
-  // Navigate to previous slide
   const prevSlide = () => {
     handleSlideChange(currentIndex === 0 ? servicesData.length - 1 : currentIndex - 1);
   };
 
-  // Navigate to next slide
   const nextSlide = () => {
     handleSlideChange(currentIndex === servicesData.length - 1 ? 0 : currentIndex + 1);
   };
 
-  // Select specific slide
   const goToSlide = (index) => {
     handleSlideChange(index);
   };
 
-  // Handle opening lightbox - pause auto-sliding
   const openLightbox = () => {
     setIsLightboxOpen(true);
     setAutoSlideActive(false);
   };
 
-  // Handle closing lightbox - resume auto-sliding
   const closeLightbox = () => {
     setIsLightboxOpen(false);
     setAutoSlideActive(true);
@@ -121,7 +113,6 @@ export default function ServicesCarousel() {
 
   const currentImages = servicesData[currentIndex]?.images || [];
 
-  // Custom CSS styles to override global styles
   const customStyles = `
     /* Custom CSS for Services Carousel - with unique class names to avoid conflicts */
     .sc-wrapper {
@@ -456,21 +447,3 @@ export default function ServicesCarousel() {
   );
 }
 
-// Remove the following redundant return statement:
-// return (
-//   <ErrorBoundary>
-//     <div id="services">
-//       <div className="container">
-//         <div className="section-title text-center">
-//           <h2>Our Services</h2>
-//           <p>
-//             Discover the various services and activities we offer to our community.
-//           </p>
-//         </div>
-//         <div className="row">
-//           {/* Add your service carousel content here */}
-//         </div>
-//       </div>
-//     </div>
-//   </ErrorBoundary>
-// );

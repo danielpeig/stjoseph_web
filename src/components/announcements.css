@@ -14,7 +14,6 @@
     opacity: 0;
   }
 
-/* Customize animation durations */
 .animate__animated {
   --animate-duration: 1s;
 }

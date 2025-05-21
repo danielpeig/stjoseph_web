@@ -32,12 +32,11 @@ export const Announcements = (props) => {
   useEffect(() => {
     fetchAnnouncements();
     
-    // Create intersection observer
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 } 
     );
 
     if (announcementRef.current) {
@@ -74,9 +73,9 @@ export const Announcements = (props) => {
 
   useEffect(() => {
     let interval;
-    if (!isPaused && announcements.length > 1) {  // Only autoplay if there's more than 1 announcement
+    if (!isPaused && announcements.length > 1) {  
       interval = setInterval(() => {
-        if (!isTransitioning) {  // Only change if not currently transitioning
+        if (!isTransitioning) {  
           handleSlideChange((prevIndex) => (prevIndex + 1) % announcements.length);
         }
       }, 5000);
@@ -88,32 +87,31 @@ export const Announcements = (props) => {
   }, [announcements.length, isPaused, isTransitioning]);
 
   const handleSlideChange = (nextIndex) => {
-    if (isTransitioning) return; // Prevent multiple transitions
+    if (isTransitioning) return; 
     
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentIndex(typeof nextIndex === 'function' ? nextIndex(currentIndex) : nextIndex);
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 300); // Reduced to 300ms for smoother transitions
+      }, 300); 
     }, 10);
   };
 
   const handlePrev = () => {
-    setIsPaused(true); // Pause autoplay when user interacts
+    setIsPaused(true); 
     handleSlideChange(prevIndex => 
       prevIndex === 0 ? announcements.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
-    setIsPaused(true); // Pause autoplay when user interacts
+    setIsPaused(true); 
     handleSlideChange(prevIndex => 
       (prevIndex + 1) % announcements.length
     );
   };
 
-  // Resume autoplay after 10 seconds of inactivity
   useEffect(() => {
     if (isPaused) {
       const timeout = setTimeout(() => {

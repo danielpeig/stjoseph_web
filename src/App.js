@@ -20,24 +20,20 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
   speedAsDuration: true,
 });
 
-// Handle hash scrolling
 function ScrollToHashElement() {
   const location = useLocation();
 
   useEffect(() => {
-    // If there's a hash in the URL
     if (location.hash) {
-      // Get the element by id (without the #)
       const element = document.getElementById(location.hash.slice(1));
       
-      // If the element exists, scroll to it
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
     }
-  }, [location]); // Re-run this effect when location changes
+  }, [location]); 
 
   return null;
 }
@@ -59,10 +55,8 @@ const HomePage = ({ landingPageData }) => {
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
-    // Load the existing JSON data
     const existingData = JsonData;
     
-    // Add announcements data if it doesn't exist
     if (!existingData.Announcements) {
       existingData.Announcements = {
         announcements: [

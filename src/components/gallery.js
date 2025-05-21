@@ -3,19 +3,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Image } from "./image";
 
 export const Gallery = ({ data = [] }) => {
-  const itemsPerPage = 9; // 3x3 grid
+  const itemsPerPage = 9; 
   const [currentPage, setCurrentPage] = useState(0);
   
-  // Calculate total pages
   const totalPages = Math.ceil(data.length / itemsPerPage);
   
-  // Get current items to display
   const currentItems = data.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
   
-  // Handle pagination
   const goToNextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
   };
@@ -24,7 +21,6 @@ export const Gallery = ({ data = [] }) => {
     setCurrentPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
   };
 
-  // Calculate if last row needs offset
   const calculateOffset = (items) => {
     const itemsInLastRow = items.length % 3;
     

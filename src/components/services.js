@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "animate.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Lightbox from "react-image-lightbox";
 import 'react-image-lightbox/style.css';
@@ -454,3 +455,22 @@ export default function ServicesCarousel() {
     </>
   );
 }
+
+// Remove the following redundant return statement:
+// return (
+//   <ErrorBoundary>
+//     <div id="services">
+//       <div className="container">
+//         <div className="section-title text-center">
+//           <h2>Our Services</h2>
+//           <p>
+//             Discover the various services and activities we offer to our community.
+//           </p>
+//         </div>
+//         <div className="row">
+//           {/* Add your service carousel content here */}
+//         </div>
+//       </div>
+//     </div>
+//   </ErrorBoundary>
+// );

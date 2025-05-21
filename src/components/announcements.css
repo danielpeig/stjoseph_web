@@ -1,0 +1,36 @@
+.announcement-box {
+  opacity: 0;
+}
+
+.announcement-box.animate__animated {
+  opacity: 1;
+}
+
+.announcement-content {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .announcement-content.transitioning {
+    opacity: 0;
+  }
+
+/* Customize animation durations */
+.animate__animated {
+  --animate-duration: 1s;
+}
+
+.animate__delay-05s {
+  animation-delay: 0.5s;
+}
+
+.animate__delay-15s {
+  animation-delay: 1.5s;
+}
+
+.animate__delay-2s {
+  animation-delay: 2s;
+}
+
+.animate__delay-25s {
+  animation-delay: 2.5s;
+}

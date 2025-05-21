@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import "animate.css";
 import Swal from "sweetalert2";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, limit, doc, getDoc } from "firebase/firestore";
@@ -34,6 +34,27 @@ export const Contact = (props) => {
   });
   
   const [result, setResult] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
   
   // Admin login state
   const [showAdminForm, setShowAdminForm] = useState(false);
@@ -168,7 +189,7 @@ export const Contact = (props) => {
 
   return (
     <div>
-      <div id="contact">
+      <div id="contact" ref={contactRef}>
         <div className="container">
           <div className="col-md-8">
             <div className="row">
@@ -180,14 +201,14 @@ export const Contact = (props) => {
             <br></br>
             <br></br>
             <br></br>
-              <div className="section-title">
+              <div className={`section-title ${isVisible ? 'animate__animated animate__fadeInUp animate__delay-05s' : ''}`}>
                 <h2>Contact us Now!</h2>
                 <p>
                   Please fill out the form below to send us an email and we will
                   get back to you as soon as possible.
                 </p>
               </div>
-              <form name="sentMessage" onSubmit={onSubmit}>
+              <form name="sentMessage" onSubmit={onSubmit} className={isVisible ? 'animate__animated animate__fadeInUp animate__delay-1s' : ''}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -240,7 +261,7 @@ export const Contact = (props) => {
               </form>
             </div>
           </div>
-          <div className="col-md-3 col-md-offset-1 contact-info">
+          <div className={`col-md-3 col-md-offset-1 contact-info ${isVisible ? 'animate__animated animate__fadeInRight animate__delay-15s' : ''}`}>
           <br></br>
             <br></br>
             <br></br>

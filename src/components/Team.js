@@ -1,11 +1,34 @@
-import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import "animate.css";
 
 export const Team = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const teamRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (teamRef.current) {
+      observer.observe(teamRef.current);
+    }
+
+    return () => {
+      if (teamRef.current) {
+        observer.unobserve(teamRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div id="team">
+    <div id="team" ref={teamRef}>
       <div className="container">
-        <div className="section-title text-center">
+        <div className={`section-title text-center ${isVisible ? 'animate__animated animate__fadeInUp animate__delay-05s' : ''}`}>
           <h2>Meet the Team</h2>
           <p>
             Our team of dedicated professionals brings years of experience and passion
@@ -13,7 +36,7 @@ export const Team = (props) => {
           </p>
         </div>
         
-        <div className="team-container">
+        <div className={`team-container ${isVisible ? 'animate__animated animate__fadeInUp animate__delay-1s' : ''}`}>
           {props.data
             ? props.data.map((d, i) => (
                 <div key={`${d.name}-${i}`} className="team-member">

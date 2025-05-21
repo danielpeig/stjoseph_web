@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import "animate.css";
+export const About = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef(null);
 
-export const About = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div id="about">
+    <div id="about" ref={aboutRef}>
       <div className="container">
-        <div className="row">
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <div className={`row ${isVisible ? 'animate__animated animate__fadeInUp animate__delay-05s' : ''}`}>
           <div className="col-xs-12 col-md-6">
-            <img src="img/pan-de-san-jose(6).jpg" className="img-responsive" alt="" />
+            <img src="img/about.jpg" className={`img-responsive ${isVisible ? 'animate__animated animate__fadeInLeft animate__delay-05s' : ''}`} alt="" />
           </div>
           <div className="col-xs-12 col-md-6">
-            <div className="about-text">
+            <div className={`about-text ${isVisible ? 'animate__animated animate__fadeInRight animate__delay-05s' : ''}`}>
               <h2>About Us</h2>
               <p>
                 Welcome to the Diocesan Shrine and Parish of Saint Joseph — a

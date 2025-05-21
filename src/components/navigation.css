@@ -1,28 +1,34 @@
+/* Modern Navigation Styles */
 #menu {
-  padding: 15px 0;
-  transition: all 0.8s;
+  padding: 18px 0;
+  transition: all 0.4s ease;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 #menu.navbar-default {
-  background-color: rgba(248, 248, 248, 0.9);
-  border-color: rgba(231, 231, 231, 0);
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-
-.navbar-default {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.98);
+  border-color: transparent;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
 
 /* Adjust scroll padding for the entire page */
 html {
-  scroll-padding-top: 120px; /* Increased to ensure content doesn't hide behind navbar */
+  scroll-padding-top: 120px;
+  scroll-behavior: smooth;
 }
 
 /* General section spacing */
 section {
   padding: 120px 0;
   position: relative;
-  min-height: calc(100vh - 80px); /* Ensures sections take up full viewport height */
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +62,12 @@ section {
   justify-content: center;
   width: 100%;
   overflow-x: auto;
+  padding: 20px 0;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .schedule-table {
@@ -63,24 +75,43 @@ section {
   max-width: 800px;
   margin: 0 auto;
   border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .schedule-table th,
 .schedule-table td {
   text-align: center;
   padding: 15px;
-  padding-left: 40% !important;
   border-bottom: 1px solid #e1e8ed;
 }
 
 .schedule-table th {
   background-color: #f8f9fa;
   font-weight: 600;
+  color: #333;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.schedule-table tr:hover td {
+  background-color: #f8f9fa;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .schedule-table {
     width: 100%;
+  }
+  
+  section {
+    padding: 80px 0;
+  }
+  
+  .table-wrapper {
+    padding: 10px;
   }
 }

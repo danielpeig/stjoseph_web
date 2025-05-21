@@ -48,10 +48,9 @@ const HomePage = ({ landingPageData }) => {
       <Header data={landingPageData.Header} />
       <Announcements data={landingPageData.Announcements} />
       <About data={landingPageData.About} />
-      <Schedule data={landingPageData.Schedule}/>
+      <Priests data={landingPageData.Priests} scheduleData={landingPageData.Schedule} />
       <Services data={landingPageData.Services} />
       <Gallery data={landingPageData.Gallery} />
-      <Priests data={landingPageData.Priests} />
       <Contact data={landingPageData.Contact} />
     </>
   );

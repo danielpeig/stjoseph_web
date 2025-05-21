@@ -1,5 +1,5 @@
 .admin-dashboard {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   min-height: 100vh;
   padding: 120px 0 60px;
 }
@@ -7,14 +7,14 @@
 .admin-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .admin-title {
   color: #2c3e50;
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
   text-align: center;
   position: relative;
   padding-bottom: 15px;
@@ -26,32 +26,49 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: 80px;
+  height: 4px;
   background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  border-radius: 2px;
 }
 
 .announcement-form {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin-bottom: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.announcement-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .announcement-input {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.announcement-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
 }
 
 .announcement-input input,
 .announcement-input textarea {
   width: 100%;
-  padding: 12px 15px;
+  padding: 14px 18px;
   border: 1px solid #e1e8ed;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 15px;
   transition: all 0.3s ease;
   background: #f8f9fa;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .announcement-input input:focus,
@@ -65,39 +82,71 @@
 .btn-add {
   background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
   color: #fff;
-  padding: 12px 30px;
+  padding: 14px 30px;
   border: none;
-  border-radius: 25px;
-  font-size: 15px;
-  font-weight: 500;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-add:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.btn-add:hover:before {
+  width: 100%;
 }
 
 .btn-add:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(92, 169, 251, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(92, 169, 251, 0.3);
 }
 
 .announcement-list {
   display: grid;
-  gap: 20px;
+  gap: 25px;
 }
 
 .announcement-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 30px;
   transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.announcement-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #5ca9fb 0%, #6372ff 100%);
 }
 
 .announcement-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card-actions {

@@ -1,25 +1,11 @@
 import React from "react";
-import Swal from "sweetalert2";
 import { Link, useLocation } from "react-router-dom";
-
 
 export const Navigation = (props) => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isTeamPage = location.pathname === "/team";
-  const handleImagePopup = () => {
-    Swal.fire({
-      title: "Thank You!",
-      text: "All Donations will go to the Church's Foundation.",
-      imageUrl: "img/donate.jpg",
-      imageWidth: 320,
-      imageHeight: 400,
-      imageAlt: "Donate Image",
-      confirmButtonText: "Close",
-      confirmButtonColor: "#3085d6",
-      background: "#fff"
-    });
-  };
+  const isDonatePage = location.pathname === "/donate";
 
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
@@ -50,7 +36,7 @@ export const Navigation = (props) => {
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#portfolio" className="page-scroll">Gallery</a> : <Link to="/#portfolio">Gallery</Link>}</li>
             <li className={isHomePage ? "active" : ""}>{isHomePage ? <a href="#contact" className="page-scroll">Contact</a> : <Link to="/#contact">Contact</Link>}</li>
             <li className={isTeamPage ? "active" : ""}><Link to="/team">Dev Team</Link></li>            
-            <li><button className="nav-button" onClick={handleImagePopup}><strong>Donate</strong></button></li>
+            <li className={isDonatePage ? "active" : ""}><Link to="/donate"><strong>Donate</strong></Link></li>
           </ul>
         </div>
       </div>

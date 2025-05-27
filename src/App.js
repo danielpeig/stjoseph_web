@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
-import Schedule from "./components/Schedule";
 import { About } from "./components/about";
 import { Announcements } from "./components/announcements";
 import Services from "./components/services";
@@ -10,6 +9,7 @@ import { Gallery } from "./components/gallery";
 import { Priests } from "./components/Priests.js";
 import { Team } from "./components/Team.js";
 import { Contact } from "./components/contact";
+import { Donate } from "./components/Donate";
 import AdminDashboard from "./components/AdminDashboard";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -90,6 +90,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={() => <HomePage landingPageData={landingPageData} />} />
         <Route path="/team" render={() => <Team data={landingPageData.Team} />} />
+        <Route path="/donate" component={Donate} />
         <Route path="/admin-dashboard" component={AdminDashboard} />
       </Switch>
     </Router>

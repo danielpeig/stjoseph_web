@@ -5,7 +5,11 @@ import "animate.css";
 export const Team = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   const teamRef = useRef(null);
-
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

@@ -38,6 +38,15 @@ function ScrollToHashElement() {
   return null;
 }
 
+function NavigationWrapper() {
+  const location = useLocation();
+  // Don't show navigation on admin dashboard pages
+  if (location.pathname.includes('/admin-dashboard')) {
+    return null;
+  }
+  return <Navigation />;
+}
+
 const HomePage = ({ landingPageData }) => {
   return (
     <>
@@ -85,7 +94,7 @@ const App = () => {
 
   return (
     <Router>
-      <Navigation />
+      <NavigationWrapper />
       <ScrollToHashElement />
       <Switch>
         <Route exact path="/" render={() => <HomePage landingPageData={landingPageData} />} />

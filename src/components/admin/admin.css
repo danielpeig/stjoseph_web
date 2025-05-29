@@ -1,0 +1,158 @@
+.admin-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fefefe;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .admin-section h4 {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #555;
+  }
+  
+  /* Shared form input styles */
+  .priest-form input,
+  .priest-form textarea,
+  .priest-card input,
+  .priest-card textarea,
+  .gallery-form input,
+  .gallery-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  
+  textarea {
+    min-height: 60px;
+  }
+  
+  .btn-add,
+  .btn-save,
+  .btn-delete {
+    padding: 10px 16px;
+    margin: 6px 4px 0 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-add {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-save {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .btn-delete {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .btn-add:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-save:hover {
+    background-color: #1976d2;
+  }
+  
+  .btn-delete:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Card structure */
+  .priest-card,
+  .gallery-card {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .error-message {
+    background-color: #ffe0e0;
+    color: #d32f2f;
+    padding: 10px;
+    border: 1px solid #d32f2f;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Gallery-specific additions */
+  .gallery-form,
+  .announcement-form {
+    margin-bottom: 24px;
+  }
+  
+  .gallery-input {
+    margin-bottom: 12px;
+  }
+  
+  .gallery-preview img {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+  }
+  
+  .priest-image-preview {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  .priest-image-preview img {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .priest-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .priest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }

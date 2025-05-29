@@ -155,10 +155,15 @@ export const Announcements = (props) => {
                   </button>
                 </div>
                 <div className={`announcement-content ${isTransitioning ? 'transitioning' : ''} ${isVisible ? 'animate__animated animate__fadeIn animate__delay-2.5s' : ''}`}
-                     style={{ transition: 'opacity 0.5s ease-in-out' }}>
-                  <h3>{announcements[currentIndex]?.title}</h3>
-                  <p>{announcements[currentIndex]?.content}</p>
-                </div>
+                  style={{ transition: 'opacity 0.5s ease-in-out' }}>
+                {announcements.length > 0 && (
+                  <div key={announcements[currentIndex].id}>
+                    <h3>{announcements[currentIndex].title}</h3>
+                    <p className="author">Posted by: {announcements[currentIndex].author || 'System Admin'}</p>
+                    <p>{announcements[currentIndex].content}</p>
+                  </div>
+                )}
+              </div>
               </div>
             )}
           </div>

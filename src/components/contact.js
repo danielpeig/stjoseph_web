@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "animate.css";
 import Swal from "sweetalert2";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, limit, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, where, limit, doc, getDoc } from "firebase/firestore";
+import "./contact.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBfjYMkYdCPTKb0FyGIvKB2fVlbTdobi1s",
@@ -54,10 +55,15 @@ export const Contact = (props) => {
     };
   }, []);
   
-  const [showAdminForm, setShowAdminForm] = useState(false);
+  const [adminUsername, setAdminUsername] = useState("");
   const [adminPassword, setAdminPassword] = useState("");
   const [adminMessage, setAdminMessage] = useState("");
-
+  const [showAdminForm, setShowAdminForm] = useState(false);
+  // Add these new state variables
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const [registrationKey, setRegistrationKey] = useState("");
+  const [newAdminUsername, setNewAdminUsername] = useState("");
+  const [newAdminPassword, setNewAdminPassword] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState({
@@ -66,41 +72,126 @@ export const Contact = (props) => {
     });
   };
   
+  const handleAdminUsernameChange = (e) => {
+    setAdminUsername(e.target.value);
+  };
+  
+
+
   const handleAdminPasswordChange = (e) => {
     setAdminPassword(e.target.value);
   };
-  
+
   const toggleAdminForm = () => {
     setShowAdminForm(!showAdminForm);
     setAdminMessage("");
+    setAdminUsername("");
+    setAdminPassword("");
   };
-  
-  const checkAdminPassword = () => {
-    const correctPassword = "l@t0m";
-    
-    console.log("Checking password:", adminPassword, "against:", correctPassword);
-    
-    if (adminPassword === correctPassword) {
-      setAdminMessage("Admin login successful");
+
+  const handleAdminRegistration = async () => {
+    try {
+      if (!registrationKey || !newAdminUsername || !newAdminPassword) {
+        setAdminMessage("All fields are required");
+        return;
+      }
+
+      // Verify registration key (you can change this to any secure key)
+      if (registrationKey !== "stjoseph2025") {
+        setAdminMessage("Invalid registration key");
+        return;
+      }
+
+      // Check if username already exists
+      const adminsRef = collection(db, "admins");
+      const q = query(adminsRef, where("username", "==", newAdminUsername));
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        setAdminMessage("Username already exists");
+        return;
+      }
+
+      // Add new admin to Firebase
+      await addDoc(collection(db, "admins"), {
+        username: newAdminUsername,
+        password: newAdminPassword,
+        createdAt: serverTimestamp()
+      });
+
       Swal.fire({
         title: "Success!",
-        text: "Admin login successful",
+        text: "Admin account created successfully",
         icon: "success",
-        confirmButtonText: "Continue to Admin Panel",
-        confirmButtonColor: "#3085d6"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = '/admin-dashboard';
-        }
+        confirmButtonText: "OK"
       });
-    } else {
-      setAdminMessage("Incorrect password");
+
+      setShowRegisterForm(false);
+      setRegistrationKey("");
+      setNewAdminUsername("");
+      setNewAdminPassword("");
+    } catch (error) {
+      setAdminMessage("Registration error: " + error.message);
+    }
+  };
+
+  const checkAdminCredentials = async () => {
+    try {
+      if (!adminUsername || !adminPassword) {
+        setAdminMessage("Please enter both username and password");
+        return;
+      }
+
+      // Query admin collection to check credentials
+      const adminsRef = collection(db, "admins");
+      const q = query(adminsRef, where("username", "==", adminUsername));
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        const adminDoc = querySnapshot.docs[0];
+        const adminData = adminDoc.data();
+
+        if (adminData.password === adminPassword) {
+          setAdminMessage("Admin login successful");
+          localStorage.setItem('isAdmin', 'true');
+          localStorage.setItem('adminUsername', adminUsername);
+          
+          Swal.fire({
+            title: "Success!",
+            text: "Admin login successful",
+            icon: "success",
+            confirmButtonText: "Continue to Admin Panel",
+            confirmButtonColor: "#3085d6"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = '/admin-dashboard';
+            }
+          });
+        } else {
+          setAdminMessage("Invalid password");
+          Swal.fire({
+            title: "Error!",
+            text: "Invalid password",
+            icon: "error",
+            confirmButtonText: "Try Again"
+          });
+        }
+      } else {
+        setAdminMessage("Username not found");
+        Swal.fire({
+          title: "Error!",
+          text: "Username not found",
+          icon: "error",
+          confirmButtonText: "Try Again"
+        });
+      }
+    } catch (error) {
+      setAdminMessage("Login error: " + error.message);
       Swal.fire({
         title: "Error!",
-        text: "Incorrect password",
+        text: "An error occurred during login",
         icon: "error",
-        confirmButtonText: "Try Again",
-        confirmButtonColor: "#d33"
+        confirmButtonText: "Try Again"
       });
     }
   };
@@ -304,33 +395,94 @@ export const Contact = (props) => {
           <p className="mb-1">
             <span 
               className="cursor-pointer" 
-              onClick={toggleAdminForm} 
-              title="Company Information">
+              onClick={(e) => {
+                if (e.altKey && e.ctrlKey) {
+                  setShowRegisterForm(!showRegisterForm);
+                  setRegistrationKey("");
+                  setNewAdminUsername("");
+                  setNewAdminPassword("");
+                } else {
+                  toggleAdminForm();
+                }
+              }} 
+              title="Admin Login"
+              style={{ cursor: 'pointer' }}
+            >
               965 Aurora Blvd, Project 3, Quezon City
             </span>
           </p>
-          {showAdminForm && (
-            <div className="mt-3 max-w-xs mx-auto">
+        </div>
+      </div>
+      <div className="admin-login-section">
+        {showAdminForm && (
+          <div className="admin-form">
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Admin Username"
+                value={adminUsername}
+                onChange={handleAdminUsernameChange}
+              />
+            </div>
+            <div className="form-group">
               <input
                 type="password"
+                className="form-control"
+                placeholder="Admin Password"
                 value={adminPassword}
                 onChange={handleAdminPasswordChange}
-                placeholder="Admin Password"
-                className="px-3 py-1 text-black rounded w-full mb-2"
               />
-              <button
-                onClick={checkAdminPassword}
-                className="bg-white text-blue-500 px-3 py-1 rounded">
-                Login
-              </button>
-              {adminMessage && (
-                <p className="mt-2 text-sm text-white bg-opacity-70 p-1 rounded">
-                  {adminMessage}
-                </p>
-              )}
             </div>
-          )}
-        </div>
+            <button
+              type="button"
+              className="btn btn-custom"
+              onClick={checkAdminCredentials}
+            >
+              Login as Admin
+            </button>
+            {adminMessage && <p className="text-danger">{adminMessage}</p>}
+          </div>
+        )}
+        {showRegisterForm && (
+          <div className="admin-form mt-3">
+            <div className="form-group">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Registration Key"
+                value={registrationKey}
+                onChange={(e) => setRegistrationKey(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="New Admin Username"
+                value={newAdminUsername}
+                onChange={(e) => setNewAdminUsername(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="New Admin Password"
+                value={newAdminPassword}
+                onChange={(e) => setNewAdminPassword(e.target.value)}
+              />
+            </div>
+            <button
+              type="button"
+              className="btn btn-custom"
+              onClick={handleAdminRegistration}
+            >
+              Register Admin
+            </button>
+            {adminMessage && <p className="text-danger">{adminMessage}</p>}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -125,7 +125,6 @@ const AdminDashboard = () => {
           />
           <Route path="/admin-dashboard/priest" component={AdminPriest} />
           <Route path="/admin-dashboard/gallery" component={AdminGallery} />
-          <Route path="/admin-dashboard/contents" component={AdminContents} />
           <Route path="/admin-dashboard/donations" component={AdminDonations} />
           <Route path="/admin-dashboard/inquiries" component={AdminInquiries} />
         </Switch>

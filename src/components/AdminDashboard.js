@@ -93,9 +93,6 @@ const AdminDashboard = () => {
                 <Link to="/admin-dashboard/gallery">Gallery</Link>
               </li>
               <li>
-                <Link to="/admin-dashboard/contents">Contents</Link>
-              </li>
-              <li>
                 <Link to="/admin-dashboard/donations">Donations</Link>
               </li>
               <li>
